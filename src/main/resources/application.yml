@@ -1,1 +1,2 @@
-spring.rsocket.server.port=4114
+spring.rsocket.server.port: 4114
+server.port: 8090
