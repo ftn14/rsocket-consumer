@@ -8,6 +8,6 @@ import reactor.core.publisher.Mono
 class RSocketController {
 
     @MessageMapping("hands")
-    /* suspend */ fun consumeHand(hm2Hand: String): Mono<String> = Mono.just("received:$hm2Hand")
+    suspend fun consumeHand(hm2Hand: String): Mono<String> = Mono.just("received:$hm2Hand")
 
 }
