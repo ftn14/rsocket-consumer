@@ -1,5 +1,6 @@
-package com.ftx.h1.inside.controller
+package com.ftx.h1.outside.controller
 
+import org.reactivestreams.Publisher
 import org.springframework.messaging.handler.annotation.MessageMapping
 import org.springframework.stereotype.Controller
 import reactor.core.publisher.Mono
@@ -7,7 +8,7 @@ import reactor.core.publisher.Mono
 @Controller
 class RSocketController {
 
-    @MessageMapping("hands")
-    suspend fun consumeHand(hm2Hand: String): Mono<String> = Mono.just("received:$hm2Hand")
+    @MessageMapping("HANDS")
+    fun consumeHand(hm2Hand: String): Publisher<String> = Mono.just("RESPONSE")
 
 }

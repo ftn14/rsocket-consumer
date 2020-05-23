@@ -1,2 +1,6 @@
-spring.rsocket.server.port: 4114
-server.port: 8090
+spring:
+  rsocket.server.port: 7000
+#  main:
+#    lazy-initialization: false
+
+#server.port: 8090
