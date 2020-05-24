@@ -1,5 +1,8 @@
 package com.ftx.h1.outside.controller
 
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.async
+import kotlinx.coroutines.reactor.mono
 import mu.KotlinLogging
 import org.springframework.messaging.handler.annotation.MessageMapping
 import org.springframework.stereotype.Controller
@@ -11,8 +14,11 @@ private val logger = KotlinLogging.logger {}
 class RSocketController {
 
     @MessageMapping("HANDS")
-    suspend fun consumeHand(hm2Hand: String): Mono<Void> {
+    fun consumeHand(hm2Hand: String): Mono<String> = mono {
         logger.info { "received: $hm2Hand" }
-        return Mono.empty()
+        val result = GlobalScope.async {
+            "result"
+        }
+        result.await()
     }
 }
