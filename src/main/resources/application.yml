@@ -1,6 +1,10 @@
 spring:
-  rsocket.server.port: 7000
+  rsocket.server.port: 4114
 #  main:
 #    lazy-initialization: false
 
 #server.port: 8090
+
+logging:
+  level:
+    com.ftx.h1.outside: DEBUG
